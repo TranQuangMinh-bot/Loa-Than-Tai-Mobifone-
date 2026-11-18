@@ -26,13 +26,9 @@ const REASONS: Reason[] = [
 function ReasonCard({ r }: { r: Reason }) {
   return (
     <div className="relative rounded-2xl bg-white p-5 shadow-[0_6px_24px_rgba(0,0,0,0.07)]">
-      {/* Số cho mobile */}
-      <span className="absolute right-4 top-4 flex h-7 w-7 items-center justify-center rounded-full bg-brand text-xs font-bold text-white md:hidden">
-        {r.no}
-      </span>
-      <Image src={`/${r.icon}`} alt="" width={44} height={44} className="h-10 w-10 object-contain" />
-      <h3 className="mt-3 text-[15px] font-bold text-neutral-900">{r.title}</h3>
-      <p className="mt-1.5 text-[13px] leading-5 text-neutral-500">{r.desc}</p>
+      <Image src={`/${r.icon}`} alt="" width={44} height={44} className="h-10 w-10 object-contain md:h-[26px] md:w-[26px]" />
+      <h3 className="mt-[18px] text-[17px] font-bold text-neutral-900 md:mt-3 md:text-[15px]">{r.title}</h3>
+      <p className="mt-2 text-[14.5px] leading-[23.5px] text-neutral-600 md:mt-1.5 md:text-[13px] md:leading-5 md:text-neutral-500">{r.desc}</p>
       {r.extra === "app" && (
         <Image src="/app-screens.png" alt="Giao diện App MobiFone" width={710} height={475} className="mt-4 w-full" />
       )}
@@ -91,16 +87,20 @@ export default function Reasons() {
   );
 
   return (
-    <section id="uu-diem" className="scroll-mt-24 bg-neutral-50 py-16">
-      <div className="mx-auto max-w-3xl px-6">
-        <h2 className="text-center text-2xl font-extrabold text-neutral-900 sm:text-[26px]">
-          8 lý do chọn Loa Thần Tài Mobifone
+    <section id="uu-diem" className="scroll-mt-24 bg-neutral-50 py-10 md:py-16">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+        <h2 className="text-center text-[23px] font-bold leading-8 text-neutral-900 sm:text-[26px] md:font-extrabold">
+          8 lý do chọn Loa Thần Tài MobiFone
         </h2>
 
         {/* MOBILE: xếp dọc 1-8 */}
-        <ul className="mt-10 space-y-5 md:hidden">
+        <ul className="mt-7 space-y-6 md:hidden">
           {REASONS.map((r) => (
-            <li key={r.no}>
+            <li key={r.no} className="relative pt-[14px]">
+              {/* Số tròn đè lên mép trên thẻ */}
+              <span className="absolute left-1/2 top-0 z-10 flex h-7 w-7 -translate-x-1/2 items-center justify-center rounded-full bg-brand text-[13px] font-bold text-white">
+                {r.no}
+              </span>
               <ReasonCard r={r} />
             </li>
           ))}

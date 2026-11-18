@@ -7,7 +7,7 @@ export default function FloatingContact() {
       <a
         href="#tu-van"
         aria-label="Nhân viên hỗ trợ"
-        className="block h-14 w-14 overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105"
+        className="block h-12 w-12 overflow-hidden rounded-2xl shadow-lg sm:h-14 sm:w-14 transition-transform hover:scale-105"
       >
         <Image
           src="/support.png"
@@ -22,7 +22,7 @@ export default function FloatingContact() {
       <a
         href="#"
         aria-label="Chat Zalo"
-        className="block h-14 w-14 overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105"
+        className="block h-12 w-12 overflow-hidden rounded-2xl shadow-lg sm:h-14 sm:w-14 transition-transform hover:scale-105"
       >
         <Image
           src="/zalo.png"

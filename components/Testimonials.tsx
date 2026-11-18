@@ -46,7 +46,7 @@ export default function Testimonials() {
 
         <div
           ref={trackRef}
-          className="mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="-mx-6 mt-4 flex scroll-px-6 snap-x snap-mandatory gap-6 overflow-x-auto px-6 py-6 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {DATA.map((t) => (
             <article

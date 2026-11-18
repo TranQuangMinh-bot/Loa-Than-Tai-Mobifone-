@@ -46,7 +46,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-[1110px] flex-col gap-10 px-6 lg:flex-row lg:justify-between">
         {/* Cột trái: logo + liên hệ */}
         <div className="space-y-6">
-          <Image src="/logo.png" alt="Loa Thần Tài MobiFone" width={167} height={155} className="h-16 w-auto" />
+          <Image src="/logo.png" alt="Loa Thần Tài MobiFone" width={167} height={155} className="h-16 w-auto mix-blend-multiply" />
 
           <Row
             icon={

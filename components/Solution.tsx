@@ -64,7 +64,7 @@ export default function Solution() {
               ))}
             </ul>
 
-            <div className="mt-auto grid grid-cols-4 gap-3 pt-16">
+            <div className="mt-auto grid grid-cols-2 gap-3 pt-10 sm:grid-cols-4 sm:pt-16">
               {[1, 2, 3, 4].map((n) => (
                 <Image
                   key={n}

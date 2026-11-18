@@ -19,7 +19,7 @@ function Logo() {
       alt="Loa Thần Tài MobiFone"
       width={167}
       height={155}
-      className="h-12 w-auto sm:h-25"
+      className="h-12 w-auto sm:h-[84px]"
       priority
     />
   );

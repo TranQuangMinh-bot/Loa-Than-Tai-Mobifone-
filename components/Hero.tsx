@@ -72,7 +72,7 @@ export default function Hero() {
           alt="Ông Thần Tài cầm mã QR bên cạnh Loa Thần Tài MobiFone"
           width={763}
           height={604}
-          className="h-auto w-full max-w-[350px] sm:max-w-[420px] lg:max-w-[600px]"
+          className="h-auto w-full min-w-0 max-w-[350px] sm:max-w-[420px] lg:max-w-[600px]"
           priority
         />
       </div>

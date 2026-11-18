@@ -63,7 +63,7 @@ export default function Contact() {
             alt=""
             width={560}
             height={537}
-            className="pointer-events-none absolute right-0 top-0 hidden h-full w-auto lg:block"
+            className="pointer-events-none absolute right-0 top-0 hidden h-full object-cover object-right lg:block lg:w-[48%] lg:[mask-image:linear-gradient(to_right,transparent,black_35%)] xl:w-auto xl:[mask-image:none]"
           />
 
           <form
