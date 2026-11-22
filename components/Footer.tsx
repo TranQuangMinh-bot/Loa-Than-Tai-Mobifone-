@@ -27,13 +27,13 @@ const ICON = {
   strokeWidth: 1.8,
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
-  className: "mt-0.5 shrink-0 text-neutral-700",
+  className: "mt-0.5 shrink-0 text-neutral-700 lg:h-5 lg:w-5",
   "aria-hidden": true,
 };
 
 function Row({ icon, children }: { icon: ReactNode; children: ReactNode }) {
   return (
-    <div className="flex gap-3 text-sm leading-[22px] text-neutral-800">
+    <div className="flex gap-3 text-sm leading-[22px] text-neutral-800 lg:text-base lg:leading-[22px]">
       {icon}
       <div>{children}</div>
     </div>
@@ -42,11 +42,11 @@ function Row({ icon, children }: { icon: ReactNode; children: ReactNode }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-50 pb-14 pt-14">
-      <div className="mx-auto flex max-w-[1110px] flex-col gap-10 px-6 lg:flex-row lg:justify-between">
+    <footer className="bg-neutral-50 pb-14 pt-14 lg:pt-[72px] lg:pb-[72px]">
+      <div className="mx-auto flex max-w-[1260px] flex-col gap-10 px-6 lg:flex-row lg:justify-between">
         {/* Cột trái: logo + liên hệ */}
-        <div className="space-y-6">
-          <Image src="/logo.png" alt="Loa Thần Tài MobiFone" width={167} height={155} className="h-16 w-auto mix-blend-multiply" />
+        <div className="space-y-6 lg:space-y-8">
+          <Image src="/logo.png" alt="Loa Thần Tài MobiFone" width={91} height={90} className="h-14 w-auto mix-blend-multiply lg:h-20" />
 
           <Row
             icon={
@@ -69,11 +69,11 @@ export default function Footer() {
           >
             <div className="flex flex-wrap gap-x-4 gap-y-2">
               <div>
-                <p className="text-xs text-neutral-500">Tư vấn sản phẩm</p>
+                <p className="text-xs text-neutral-500 lg:text-sm">Tư vấn sản phẩm</p>
                 <a href="tel:0936110116" className="hover:text-brand">0936.110.116</a>
               </div>
               <div className="border-l border-neutral-300 pl-4">
-                <p className="text-xs text-neutral-500">Hỗ trợ kỹ thuật</p>
+                <p className="text-xs text-neutral-500 lg:text-sm">Hỗ trợ kỹ thuật</p>
                 <a href="tel:0896151617" className="hover:text-brand">0896.151.617</a>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function Footer() {
         </div>
 
         {/* Cột phải: tải app + mạng xã hội */}
-        <div className="w-full max-w-[334px]">
+        <div className="w-full max-w-[334px] lg:max-w-[429px]">
           <div className="relative">
             <Image
               src="/app-download.png"
@@ -116,7 +116,7 @@ export default function Footer() {
             />
           </div>
 
-          <div className="mt-5 flex gap-4">
+          <div className="mt-5 flex gap-4 lg:mt-6 lg:gap-5">
             {SOCIALS.map((s) => (
               <a
                 key={s.label}
@@ -126,7 +126,7 @@ export default function Footer() {
                 rel="noreferrer"
                 className="transition-transform hover:-translate-y-0.5"
               >
-                <Image src={`/${s.icon}`} alt="" width={44} height={44} className="h-11 w-11 object-contain" />
+                <Image src={`/${s.icon}`} alt="" width={44} height={44} className="h-11 w-11 object-contain lg:h-14 lg:w-14" />
               </a>
             ))}
           </div>

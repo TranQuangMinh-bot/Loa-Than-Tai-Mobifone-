@@ -16,11 +16,11 @@ const PROVINCES = [
 type Errors = Partial<Record<"name" | "phone" | "province", string>>;
 
 const FIELD =
-  "w-full rounded-md bg-white/[0.13] px-3.5 text-sm text-white placeholder:text-white/50 outline-none ring-1 ring-transparent transition focus:bg-white/[0.18] focus:ring-white/40";
+  "w-full rounded-md bg-white/[0.13] px-3.5 text-sm text-white lg:px-4 lg:text-[15px] placeholder:text-white/50 outline-none ring-1 ring-transparent transition focus:bg-white/[0.18] focus:ring-white/40";
 
 function Label({ children, required }: { children: string; required?: boolean }) {
   return (
-    <span className="mb-1.5 block text-[13px] text-white">
+    <span className="mb-1.5 block text-[13px] text-white lg:mb-2 lg:text-sm">
       {required && <span className="mr-1 text-[#ff6b6b]">*</span>}
       {children}
     </span>
@@ -54,9 +54,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="tu-van" className="scroll-mt-24 bg-white py-16">
-      <div className="mx-auto max-w-[1110px] px-6">
-        <div className="relative overflow-hidden rounded-[28px] bg-[#8A0F1C] lg:min-h-[543px]">
+    <section id="tu-van" className="scroll-mt-24 bg-white py-16 lg:bg-[linear-gradient(to_bottom,#fff_calc(100%-108px),#fafafa_calc(100%-108px))] lg:pt-[74px] lg:pb-0">
+      <div className="mx-auto max-w-[1260px] px-6">
+        <div className="relative overflow-hidden rounded-[28px] bg-[#8A0F1C] lg:min-h-[620px] lg:rounded-[32px]">
           {/* Hình bên phải (desktop) */}
           <Image
             src="/contact-art.png"
@@ -69,23 +69,23 @@ export default function Contact() {
           <form
             onSubmit={onSubmit}
             noValidate
-            className="relative z-10 px-6 py-10 sm:px-11 lg:w-[464px] lg:pr-0"
+            className="relative z-10 px-6 py-10 sm:px-11 lg:w-[528px] lg:px-12 lg:pt-12 lg:pb-9"
           >
-            <h2 className="text-2xl font-bold text-white sm:text-[28px] lg:whitespace-nowrap">
+            <h2 className="text-2xl font-bold text-white sm:text-[28px] lg:whitespace-nowrap lg:text-[32px] lg:leading-[44px]">
               Kết nối với Loa Thần Tài MobiFone
             </h2>
-            <p className="mt-1 text-[15px] text-white">
+            <p className="mt-1 text-[15px] text-white lg:mt-0.5 lg:text-lg">
               Giá: <b>880,000đ</b>/Thiết bị (bao gồm sim data 4G)
             </p>
 
-            <div className="mt-6 space-y-5">
+            <div className="mt-6 space-y-5 lg:mt-8 lg:space-y-[22px]">
               <label className="block">
                 <Label required>Họ và tên</Label>
                 <input
                   value={form.name}
                   onChange={(e) => update("name", e.target.value)}
                   autoComplete="name"
-                  className={`${FIELD} h-[35px]`}
+                  className={`${FIELD} h-[35px] lg:h-10`}
                 />
                 {errors.name && <p className="mt-1 text-xs text-[#ffb3b3]">{errors.name}</p>}
               </label>
@@ -98,7 +98,7 @@ export default function Contact() {
                   value={form.phone}
                   onChange={(e) => update("phone", e.target.value)}
                   autoComplete="tel"
-                  className={`${FIELD} h-[35px]`}
+                  className={`${FIELD} h-[35px] lg:h-10`}
                 />
                 {errors.phone && <p className="mt-1 text-xs text-[#ffb3b3]">{errors.phone}</p>}
               </label>
@@ -109,7 +109,7 @@ export default function Contact() {
                   <select
                     value={form.province}
                     onChange={(e) => update("province", e.target.value)}
-                    className={`${FIELD} h-[35px] appearance-none pr-10 ${
+                    className={`${FIELD} h-[35px] lg:h-10 appearance-none pr-10 ${
                       form.province ? "" : "text-white/50"
                     } [&>option]:text-neutral-900`}
                   >
@@ -140,14 +140,14 @@ export default function Contact() {
                   onChange={(e) => update("message", e.target.value)}
                   placeholder="Bạn muốn..."
                   rows={3}
-                  className={`${FIELD} h-[84px] resize-none py-2.5`}
+                  className={`${FIELD} h-[84px] resize-none py-2.5 lg:h-[98px]`}
                 />
               </label>
             </div>
 
             <button
               type="submit"
-              className="mt-5 h-9 w-full rounded-md bg-[#C22334] text-sm text-white transition-colors hover:bg-[#d62a3c]"
+              className="mt-5 h-9 w-full rounded-md bg-[#C22334] text-sm text-white lg:mt-[18px] lg:h-10 lg:text-[15px] transition-colors hover:bg-[#d62a3c]"
             >
               Nhận tư vấn ngay
             </button>

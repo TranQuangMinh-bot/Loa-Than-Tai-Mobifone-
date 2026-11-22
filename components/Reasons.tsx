@@ -25,15 +25,15 @@ const REASONS: Reason[] = [
 
 function ReasonCard({ r }: { r: Reason }) {
   return (
-    <div className="relative rounded-2xl bg-white p-5 shadow-[0_6px_24px_rgba(0,0,0,0.07)]">
-      <Image src={`/${r.icon}`} alt="" width={44} height={44} className="h-10 w-10 object-contain md:h-[26px] md:w-[26px]" />
-      <h3 className="mt-[18px] text-[17px] font-bold text-neutral-900 md:mt-3 md:text-[15px]">{r.title}</h3>
-      <p className="mt-2 text-[14.5px] leading-[23.5px] text-neutral-600 md:mt-1.5 md:text-[13px] md:leading-5 md:text-neutral-500">{r.desc}</p>
+    <div className="relative rounded-2xl bg-white p-5 shadow-[0_6px_24px_rgba(0,0,0,0.07)] lg:rounded-3xl lg:px-8 lg:pt-9 lg:pb-10">
+      <Image src={`/${r.icon}`} alt="" width={44} height={44} className="h-10 w-10 object-contain md:h-[26px] md:w-[26px] lg:h-11 lg:w-11" />
+      <h3 className="mt-[18px] text-[17px] font-bold text-neutral-900 md:mt-3 md:text-[15px] lg:mt-4 lg:text-xl lg:leading-7">{r.title}</h3>
+      <p className="mt-2 text-[14.5px] leading-[23.5px] text-neutral-600 md:mt-1.5 md:text-[13px] md:leading-5 md:text-neutral-500 lg:mt-2 lg:text-[17px] lg:leading-6">{r.desc}</p>
       {r.extra === "app" && (
-        <Image src="/app-screens.png" alt="Giao diện App MobiFone" width={710} height={475} className="mt-4 w-full" />
+        <Image src="/app-screens.png" alt="Giao diện App MobiFone" width={710} height={475} className="mt-4 w-full lg:mt-6" />
       )}
       {r.extra === "device" && (
-        <Image src="/hero.png" alt="Thiết bị Loa Thần Tài" width={763} height={604} className="mt-4 w-full" />
+        <Image src="/hero.png" alt="Thiết bị Loa Thần Tài" width={763} height={604} className="mt-4 w-full lg:mx-auto lg:mt-6 lg:max-w-[380px]" />
       )}
     </div>
   );
@@ -78,7 +78,7 @@ export default function Reasons() {
       ref={(el) => {
         badgeRefs.current[r.no] = el;
       }}
-      className={`absolute top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-brand text-sm font-bold text-white ${
+      className={`absolute top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-brand text-sm font-bold text-white lg:h-11 lg:w-11 lg:text-lg ${
         r.side === "left" ? "right-0 translate-x-1/2" : "left-0 -translate-x-1/2"
       }`}
     >
@@ -87,9 +87,9 @@ export default function Reasons() {
   );
 
   return (
-    <section id="uu-diem" className="scroll-mt-24 bg-neutral-50 py-10 md:py-16">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <h2 className="text-center text-[23px] font-bold leading-8 text-neutral-900 sm:text-[26px] md:font-extrabold">
+    <section id="uu-diem" className="scroll-mt-24 bg-neutral-50 py-10 md:py-16 lg:pt-[74px] lg:pb-[120px]">
+      <div className="mx-auto max-w-[1260px] px-4 sm:px-6">
+        <h2 className="text-center text-[23px] font-bold leading-8 text-neutral-900 sm:text-[26px] md:font-extrabold lg:text-[32px] lg:font-bold lg:leading-[44px]">
           8 lý do chọn Loa Thần Tài MobiFone
         </h2>
 
@@ -107,7 +107,7 @@ export default function Reasons() {
         </ul>
 
         {/* DESKTOP: hai cột đan chéo */}
-        <div ref={wrapRef} className="relative mt-12 hidden md:block">
+        <div ref={wrapRef} className="relative mt-12 hidden md:block lg:mt-[70px]">
           {/* Đường chéo nối các số */}
           <svg className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
             <polyline
@@ -119,9 +119,9 @@ export default function Reasons() {
             />
           </svg>
 
-          <div className="grid grid-cols-2 gap-x-36">
+          <div className="grid grid-cols-2 gap-x-36 lg:gap-x-[19.1%]">
             {/* cột trái (2,4,6,8) - đẩy xuống để so le */}
-            <div className="mt-14 space-y-6">
+            <div className="mt-14 space-y-6 lg:mt-[84px] lg:space-y-11">
               {left.map((r) => (
                 <div key={r.no} className="relative">
                   <ReasonCard r={r} />
@@ -130,7 +130,7 @@ export default function Reasons() {
               ))}
             </div>
             {/* cột phải (1,3,5,7) */}
-            <div className="space-y-6">
+            <div className="space-y-6 lg:space-y-11">
               {right.map((r) => (
                 <div key={r.no} className="relative">
                   <ReasonCard r={r} />

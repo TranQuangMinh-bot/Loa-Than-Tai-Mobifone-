@@ -27,7 +27,7 @@ const FAQS = [
 
 function HelpIcon() {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" className="shrink-0" aria-hidden="true">
+    <svg width="24" height="24" viewBox="0 0 24 24" className="shrink-0 lg:h-7 lg:w-7" aria-hidden="true">
       <circle cx="12" cy="12" r="10.5" fill="none" stroke="#B9061B" strokeWidth="1.6" />
       <text
         x="12"
@@ -48,13 +48,13 @@ export default function Faq() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="faq" className="scroll-mt-24 bg-white py-14">
-      <div className="mx-auto max-w-3xl px-6">
-        <h2 className="text-center text-2xl font-extrabold text-neutral-900 sm:text-[26px]">
+    <section id="faq" className="scroll-mt-24 bg-white py-14 lg:pt-[74px] lg:pb-24">
+      <div className="mx-auto max-w-3xl px-6 lg:max-w-[864px]">
+        <h2 className="text-center text-2xl font-extrabold text-neutral-900 sm:text-[26px] lg:text-[32px] lg:font-bold lg:leading-[44px]">
           Hỏi và đáp về Loa Thần Tài MobiFone
         </h2>
 
-        <div className="mt-10 rounded-3xl bg-white px-7 shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
+        <div className="mt-10 rounded-3xl bg-white px-7 lg:mt-[66px] lg:px-8 shadow-[0_10px_40px_rgba(0,0,0,0.08)]">
           {FAQS.map((item, i) => {
             const isOpen = open === i;
             return (
@@ -66,10 +66,10 @@ export default function Faq() {
                   type="button"
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center gap-3.5 py-5 text-left"
+                  className="flex w-full items-center gap-3.5 py-5 text-left lg:gap-5 lg:py-8"
                 >
                   <HelpIcon />
-                  <span className="flex-1 text-base font-bold text-neutral-900">
+                  <span className="flex-1 text-base font-bold text-neutral-900 lg:text-lg lg:font-semibold">
                     {item.q}
                   </span>
                   <svg
@@ -90,7 +90,7 @@ export default function Faq() {
                   </svg>
                 </button>
                 {isOpen && (
-                  <p className="-mt-1 pb-5 pl-[38px] text-sm leading-6 text-neutral-500">
+                  <p className="-mt-1 pb-5 pl-[38px] text-sm leading-6 text-neutral-500 lg:-mt-3 lg:pb-9 lg:pl-12 lg:pr-12 lg:text-base lg:text-neutral-600">
                     {item.a}
                   </p>
                 )}

@@ -17,9 +17,9 @@ function Logo() {
     <Image
       src="/logo.png"
       alt="Loa Thần Tài MobiFone"
-      width={167}
-      height={155}
-      className="h-12 w-auto sm:h-[84px]"
+      width={91}
+      height={90}
+      className="h-12 w-auto lg:h-16"
       priority
     />
   );
@@ -31,13 +31,14 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-white shadow-sm lg:shadow-none">
-      <div className="mx-auto flex h-24 max-w-300 items-center justify-between px-6">
-        <a href="#loa-than-tai" aria-label="Trang chủ" onClick={() => setOpen(false)}>
+      {/* Figma: cao 96px, padding 16px trên/dưới, nội dung rộng 1212px (1920 - 354×2) */}
+      <div className="mx-auto flex h-24 max-w-[1260px] items-center justify-between px-6">
+        <a href="#loa-than-tai" aria-label="Trang chủ" className="shrink-0" onClick={() => setOpen(false)}>
           <Logo />
         </a>
 
-        {/* Menu desktop */}
-        <nav className="hidden items-center gap-5 lg:flex xl:gap-9">
+        {/* Menu desktop: Figma 762 × 38, chữ 16px, các mục cách nhau 40px */}
+        <nav className="hidden items-center gap-6 lg:flex xl:gap-10">
           {NAV_ITEMS.map((item) => {
             const isActive = active === item.href;
             return (
@@ -45,8 +46,8 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setActive(item.href)}
-                className={`text-[15px] transition-colors hover:text-brand ${
-                  isActive ? "font-bold text-brand" : "font-medium text-neutral-800"
+                className={`whitespace-nowrap py-2 text-base leading-[22px] transition-colors hover:text-brand ${
+                  isActive ? "font-bold text-brand" : "font-normal text-neutral-800"
                 }`}
               >
                 {item.label}
@@ -55,9 +56,10 @@ export default function Header() {
           })}
         </nav>
 
+        {/* Nút: Figma 125 × 40 */}
         <a
           href="#tu-van"
-          className="hidden rounded-full border border-brand px-6 py-2.5 text-[15px] font-bold text-brand transition-colors hover:bg-brand hover:text-white lg:inline-block"
+          className="hidden h-10 w-[125px] shrink-0 items-center justify-center rounded-full border border-brand text-base font-bold text-brand transition-colors hover:bg-brand hover:text-white lg:inline-flex"
         >
           Nhận tư vấn
         </a>
